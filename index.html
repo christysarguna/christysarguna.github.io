@@ -1,1 +1,61 @@
-<h1>MY Profile Page</h1>
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { BadgeCheck } from "lucide-react";
+
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-200 p-6">
+      <header className="flex flex-col items-center py-12">
+        <img
+          src="/logo.png"
+          alt="Data Analytics Logo"
+          className="h-20 mb-4"
+        />
+        <h1 className="text-4xl font-bold text-gray-800">Empowering Your Business with Data</h1>
+        <p className="text-lg text-gray-600 mt-2 text-center max-w-2xl">
+          We provide cutting-edge Data Science, Analytics, and Automation solutions tailored to your needs.
+        </p>
+      </header>
+
+      <main className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <Card className="rounded-2xl shadow-lg p-6">
+          <CardContent>
+            <h2 className="text-2xl font-semibold mb-2 flex items-center gap-2">
+              <BadgeCheck className="text-blue-600" /> Data Science
+            </h2>
+            <p className="text-gray-700">
+              Leverage statistical modeling, machine learning, and predictive analytics to gain business insights and drive decisions.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="rounded-2xl shadow-lg p-6">
+          <CardContent>
+            <h2 className="text-2xl font-semibold mb-2 flex items-center gap-2">
+              <BadgeCheck className="text-green-600" /> Analytics
+            </h2>
+            <p className="text-gray-700">
+              Transform raw data into actionable intelligence with our real-time dashboards, reporting, and KPI tracking tools.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="rounded-2xl shadow-lg p-6">
+          <CardContent>
+            <h2 className="text-2xl font-semibold mb-2 flex items-center gap-2">
+              <BadgeCheck className="text-purple-600" /> Automation
+            </h2>
+            <p className="text-gray-700">
+              Streamline your operations with RPA, AI-driven workflows, and automated reporting to reduce manual effort.
+            </p>
+          </CardContent>
+        </Card>
+      </main>
+
+      <footer className="mt-12 text-center text-sm text-gray-500">
+        &copy; {new Date().getFullYear()} CSI Analytics Hub Co. All rights reserved.
+      </footer>
+    </div>
+  );
+}
+
