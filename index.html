@@ -1,61 +1,112 @@
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { BadgeCheck } from "lucide-react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Analytics Services</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #f9fafb, #e5e7eb);
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+    header img {
+      height: 80px;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 600px;
+      margin: 20px auto 0;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    @media (min-width: 768px) {
+      .services {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      padding: 24px;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+    }
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #2563eb;
+    }
+    .card:nth-child(2) h2 {
+      color: #10b981;
+    }
+    .card:nth-child(3) h2 {
+      color: #8b5cf6;
+    }
+    .card p {
+      color: #444;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.875rem;
+      color: #666;
+      padding: 30px 20px;
+    }
+  </style>
+</head>
+<body>
 
-export default function HomePage() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-200 p-6">
-      <header className="flex flex-col items-center py-12">
-        <img
-          src="/logo.png"
-          alt="Data Analytics Logo"
-          className="h-20 mb-4"
-        />
-        <h1 className="text-4xl font-bold text-gray-800">Empowering Your Business with Data</h1>
-        <p className="text-lg text-gray-600 mt-2 text-center max-w-2xl">
-          We provide cutting-edge Data Science, Analytics, and Automation solutions tailored to your needs.
-        </p>
-      </header>
+  <header>
+    <img src="logo.png" alt="Data Analytics Logo" />
+    <h1>Empowering Your Business with Data</h1>
+    <p>We provide cutting-edge Data Science, Analytics, and Automation solutions tailored to your needs.</p>
+  </header>
 
-      <main className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        <Card className="rounded-2xl shadow-lg p-6">
-          <CardContent>
-            <h2 className="text-2xl font-semibold mb-2 flex items-center gap-2">
-              <BadgeCheck className="text-blue-600" /> Data Science
-            </h2>
-            <p className="text-gray-700">
-              Leverage statistical modeling, machine learning, and predictive analytics to gain business insights and drive decisions.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card className="rounded-2xl shadow-lg p-6">
-          <CardContent>
-            <h2 className="text-2xl font-semibold mb-2 flex items-center gap-2">
-              <BadgeCheck className="text-green-600" /> Analytics
-            </h2>
-            <p className="text-gray-700">
-              Transform raw data into actionable intelligence with our real-time dashboards, reporting, and KPI tracking tools.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card className="rounded-2xl shadow-lg p-6">
-          <CardContent>
-            <h2 className="text-2xl font-semibold mb-2 flex items-center gap-2">
-              <BadgeCheck className="text-purple-600" /> Automation
-            </h2>
-            <p className="text-gray-700">
-              Streamline your operations with RPA, AI-driven workflows, and automated reporting to reduce manual effort.
-            </p>
-          </CardContent>
-        </Card>
-      </main>
-
-      <footer className="mt-12 text-center text-sm text-gray-500">
-        &copy; {new Date().getFullYear()} CSI Analytics Hub Co. All rights reserved.
-      </footer>
+  <section class="services">
+    <div class="card">
+      <h2>Data Science</h2>
+      <p>Leverage statistical modeling, machine learning, and predictive analytics to gain business insights and drive decisions.</p>
     </div>
-  );
-}
+    <div class="card">
+      <h2>Analytics</h2>
+      <p>Transform raw data into actionable intelligence with our real-time dashboards, reporting, and KPI tracking tools.</p>
+    </div>
+    <div class="card">
+      <h2>Automation</h2>
+      <p>Streamline your operations with RPA, AI-driven workflows, and automated reporting to reduce manual effort.</p>
+    </div>
+  </section>
 
+  <footer>
+    &copy; <span id="year"></span> Data Analytics Co. All rights reserved.
+  </footer>
+
+  <script>
+    // Update the footer year dynamically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
